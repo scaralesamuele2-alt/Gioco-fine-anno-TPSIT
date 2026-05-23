@@ -1,0 +1,25 @@
+{
+  "name": "gioco-sfortuna-tpsit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scaralesamuele2-alt/Gioco-fine-anno-TPSIT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/scaralesamuele2-alt/Gioco-fine-anno-TPSIT/issues"
+  },
+  "homepage": "https://github.com/scaralesamuele2-alt/Gioco-fine-anno-TPSIT#readme",
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  }
+}
