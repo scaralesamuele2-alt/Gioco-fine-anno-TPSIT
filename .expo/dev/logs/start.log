@@ -1,0 +1,142 @@
+{"_e":"root:init","_t":1779737797331,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779737797332,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779737797337,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779737797699,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779737798356,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779737803444,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"root:init","_t":1779738112175,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779738112176,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779738112180,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779738112566,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779738113182,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779738118036,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"root:init","_t":1779738221860,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779738221861,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779738221867,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779738222276,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779738222905,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779738227697,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"root:init","_t":1779738773237,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779738773238,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779738773243,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779738773744,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779738774451,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779738780615,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"root:init","_t":1779739157340,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779739157341,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779739157346,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779739157761,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779739158419,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779739163476,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:client_log","_t":1779739167517,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThe project you requested requires a newer version of Expo Go.\n\nHow to fix this error:\n\nDownload the latest version of Expo Go from the App Store."]}
+{"_e":"metro:client_log","_t":1779739210479,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThe project you requested requires a newer version of Expo Go.\n\nHow to fix this error:\n\nDownload the latest version of Expo Go from the App Store."]}
+{"_e":"root:init","_t":1779739381460,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779739381461,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779739381467,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779739381858,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779739382462,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779739387717,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:client_log","_t":1779739392090,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThe project you requested requires a newer version of Expo Go.\n\nHow to fix this error:\n\nDownload the latest version of Expo Go from the App Store."]}
+{"_e":"root:init","_t":1779739516666,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779739516667,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779739516672,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779739517109,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779739517766,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779739523981,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:client_log","_t":1779739527981,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThe project you requested requires a newer version of Expo Go.\n\nHow to fix this error:\n\nDownload the latest version of Expo Go from the App Store."]}
+{"_e":"root:init","_t":1779739675545,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779739675547,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779739675554,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779739675955,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779739676562,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779739682286,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:client_log","_t":1779739689607,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThe project you requested requires a newer version of Expo Go.\n\nHow to fix this error:\n\nDownload the latest version of Expo Go from the App Store."]}
+{"_e":"root:init","_t":1779739794325,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779739794326,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779739794332,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779739794740,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779739795398,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779739800885,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"root:init","_t":1779739839085,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779739839087,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779739839091,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779739839537,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779739840355,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779739856912,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"root:init","_t":1779739955336,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779739955337,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779739955342,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779739955827,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779739956658,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779739964494,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"root:init","_t":1779740306745,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779740306746,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779740306752,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779740307142,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779740307777,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779740313493,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:client_log","_t":1779740321534,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThe project you requested requires a newer version of Expo Go.\n\nHow to fix this error:\n\nDownload the latest version of Expo Go from the App Store."]}
+{"_e":"metro:bundling:started","_t":1779740332549,"id":"1","platform":"web","environment":null,"entry":"App.js"}
+{"_e":"metro:bundling:progress","_t":1779740332552,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779740332583,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779740332641,"id":"1","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1779740341595,"id":"3","platform":"web","environment":null,"entry":"App.js"}
+{"_e":"metro:bundling:progress","_t":1779740341595,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779740341599,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779740341608,"id":"3","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1779740417906,"id":"5","platform":"web","environment":null,"entry":"App.js"}
+{"_e":"metro:bundling:progress","_t":1779740417906,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779740417908,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779740417911,"id":"5","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1779740462169,"id":"7","platform":"web","environment":null,"entry":"App.js"}
+{"_e":"metro:bundling:progress","_t":1779740462170,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779740462180,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779740462186,"id":"7","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"root:init","_t":1779740524343,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779740524345,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779740524351,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779740524721,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779740525321,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779740531187,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1779740556160,"id":"1","platform":"web","environment":null,"entry":"App.js"}
+{"_e":"metro:bundling:progress","_t":1779740556162,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779740556191,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779740556228,"id":"1","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1779740580387,"id":"3","platform":"web","environment":null,"entry":"App.js"}
+{"_e":"metro:bundling:progress","_t":1779740580388,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779740580390,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779740580394,"id":"3","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"root:init","_t":1779740650703,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779740650704,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779740650709,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779740651278,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779740652097,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779740658972,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1779740675945,"id":"1","platform":"web","environment":null,"entry":"App.js"}
+{"_e":"metro:bundling:progress","_t":1779740675946,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779740675978,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779740676013,"id":"1","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1779740696955,"id":"3","platform":"web","environment":null,"entry":"App.js"}
+{"_e":"metro:bundling:progress","_t":1779740696957,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779740696960,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779740696967,"id":"3","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1779740852197,"id":"5","platform":"web","environment":null,"entry":"App.js"}
+{"_e":"metro:bundling:progress","_t":1779740852197,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779740852206,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779740852209,"id":"5","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"root:init","_t":1779741172461,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779741172462,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779741172467,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779741172856,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779741173535,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779741179488,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1779741182960,"id":"1","platform":"web","environment":null,"entry":"index.js"}
+{"_e":"metro:bundling:progress","_t":1779741182963,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1779741182976,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1779741182994,"id":"1","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"root:init","_t":1779741223765,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1779741223767,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1779741223773,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1779741224170,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1779741224823,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1779741230693,"atlas":false,"workers":6,"host":"::","port":8081}
