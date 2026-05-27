@@ -48,7 +48,7 @@ export const Cards=[
   {id:47,name:"Ankle-breaker in finale al buzzer che vi porta alla sconfitta",emoji:"🦵",indiceSfortuna:98.0},
   {id:48,name:"Scambiato mentre sei in vacanza",emoji:"🏖️",indiceSfortuna:57.0},
   {id:49,name:"ESPN ti chiama sopravvalutato dell'anno",emoji:"📰",indiceSfortuna:37.5},
-  {id:50,name:"Tripla doppia record ma perdi di 20 punti",emoji:"📊",indiceSfortuna:9.0},
+  {id:50,name:"Tripla doppia record ma perdi di 15 punti",emoji:"📊",indiceSfortuna:9.0},
 ];
 export const getRandomCards=(count,excludeIds=[])=>{
   const available=Cards.filter((c)=>!excludeIds.includes(c.id));
