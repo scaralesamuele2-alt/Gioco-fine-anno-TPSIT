@@ -50,8 +50,12 @@ export const Cards=[
   {id:49,name:"ESPN ti chiama sopravvalutato dell'anno",emoji:"📰",indiceSfortuna:37.5},
   {id:50,name:"Tripla doppia record ma perdi di 15 punti",emoji:"📊",indiceSfortuna:9.0},
 ];
-export const getRandomCards=(count,excludeIds=[])=>{
-  const available=Cards.filter((c)=>!excludeIds.includes(c.id));
-  const shuffled=[...available].sort(()=>Math.random()-0.5);
-  return shuffled.slice(0,count);
+export const getRandomCards=(count,excludeIds)=>{
+    const risultato=[];
+    for(let i=0;i<Cards.length;i++){
+        if(risultato.length<count)
+            if(!excludeIds.includes(Cards[i].id))
+                risultato.push(Cards[i]);
+    }
+    return risultato;
 };

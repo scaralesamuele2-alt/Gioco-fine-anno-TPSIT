@@ -3,7 +3,8 @@ import React from "react";
 import {useState}from "react";
 import {Cards}from"./cards.js";
 
-export default function App(){
+export default function App()
+{
     const[schermata,setSchermata]=useState("Home del gioco");
     const[carte,setCarte]=useState([]);
     const[errori,setErrori]=useState(0);
@@ -33,14 +34,16 @@ export default function App(){
         </View>
     )
 }
-function Header(){
+function Header()
+{
     return( 
         <View style={styles.containerHeader}>
             <Text style={styles.headerText}>Gioco Della Sfortuna</Text>
         </View>
     )
 }
-function HomeGioco({setSchermata,Partita}){
+function HomeGioco({setSchermata,Partita})
+{
     return(
         <View style={styles.containerHomeGioco}>
             <Text style={styles.homeGiocoText}>Home del Gioco</Text>
@@ -59,7 +62,8 @@ function HomeGioco({setSchermata,Partita}){
             <Button onPress={()=>{Partita();setSchermata("Gioco");}} title="Inizia Partita"/>
         </View>
     )}
-function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate}){
+function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
+{
     const[posizione,setPosizione]=useState("");
     const[cartaAttuale,setCartaAttuale]=useState(null);
     const verificaPosizione=()=>{
@@ -128,7 +132,8 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate}){
         </View>
     )
 }
-function RisultatiGioco({setSchermata,carte,errori}){
+function RisultatiGioco({setSchermata,carte,errori})
+{
     return(
         <View style={styles.containerRisultatiGioco}>
             <Text style={styles.RisultatiTextCarte}>
