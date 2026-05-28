@@ -69,18 +69,39 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate}){
             cartaInserita.push(carte[i]);
         const precedente=cartaInserita[indice-1];
         const successiva=cartaInserita[indice];
-            if(cartaAttuale.indiceSfortuna>precedente.indiceSfortuna && cartaAttuale.indiceSfortuna<successiva.indiceSfortuna)
-            {
-                setCarte([...carte,cartaAttuale]);
-                alert("Posizione corretta, la carta è stata aggiunta al mazzo");
-            }
-            else
-            {
-                setErrori(errori+1);
-                alert("Posizione sbagliata, errore");
-            }
-        setPosizione("");
+        if(cartaAttuale.indiceSfortuna>precedente.indiceSfortuna && cartaAttuale.indiceSfortuna<successiva.indiceSfortuna)
+        {
+            setCarte([...carte,cartaAttuale]);
+            alert("Posizione corretta, la carta è stata aggiunta al mazzo");
+            if(carte.length+1>=6)
+                setSchermata("RisultatiGioco");
+        }
+        else
+        {
+            setErrori(errori+1);
+            alert("Posizione sbagliata, errore");
+            if(errori+1>=3)
+                 setSchermata("RisultatiGioco");
+        }
     };
+    const nuovaCarta=()=>{
+    const disponibili=[];
+    for(let i=0;i<Cards.length;i++)
+        if(!carteUlitizzate.includes(Cards[i].id))
+            disponibili.push(Cards[i]);
+    }
+    const random=disponibili[Math.floor(Math.random()*disponibili.length)];
+    const listaCarte=[];
+    for(let i=0;i<carte.length;i++){
+    listaCarte.push(
+        <Text>
+            {i} {carte[i].emoji}{carte[i].name}-{carte[i].indiceSfortuna}
+        </Text>
+    );
+    }
+    setCartaAttuale(random);
+    nuovaCarta();
+    setPosizione("");
     return(
         <View style={styles.containerBody}>
             <Text style={styles.bodyTextCarte}>
@@ -92,6 +113,9 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate}){
             title="Aggiungi carta"style={styles.bodyButton}/>
             <Text style={styles.bodyTextErrori}>
                 Errori:{errori}
+            </Text>
+            <Text>
+                Le tue carte:{listaCarte}
             </Text>
             <View>
                 <Text style={styles.bodyCartaEmoji}>
@@ -141,4 +165,4 @@ const styles={
         RisultatiTextCarte:{fontSize:20,fontWeight:"bold",color:"purple"},
         RisultatiTextErrori:{fontSize:20,fontWeight:"bold",color:"orange"},
         RisultatiButton:{margin:10},
-};
+}
