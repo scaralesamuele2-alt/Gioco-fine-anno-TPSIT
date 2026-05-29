@@ -150,3 +150,17 @@
 {"_e":"metro:bundling:progress","_t":1779893650610,"id":"1","progress":0,"total":1,"current":0}
 {"_e":"metro:bundling:progress","_t":1779893650631,"id":"1","progress":0,"total":1,"current":0}
 {"_e":"metro:bundling:failed","_t":1779893650645,"id":"1","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"root:init","_t":1780058068273,"format":"v0-jsonl","version":"56.1.11"}
+{"_e":"env:mode","_t":1780058068274,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1780058068280,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1780058068736,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1780058069516,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1780058075824,"atlas":false,"workers":6,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1780058080282,"id":"1","platform":"web","environment":null,"entry":"index.js"}
+{"_e":"metro:bundling:progress","_t":1780058080283,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1780058080307,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1780058080326,"id":"1","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1780058082939,"id":"3","platform":"web","environment":null,"entry":"index.js"}
+{"_e":"metro:bundling:progress","_t":1780058082939,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1780058082941,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1780058082944,"id":"3","message":"Cannot read properties of undefined (reading 'transformFile')","importStack":null,"filename":null,"targetModuleName":null,"originModulePath":null}

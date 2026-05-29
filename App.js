@@ -1,7 +1,7 @@
 import {View,Text,Button,ScrollView,TextInput} from "react-native";
 import React from "react";
 import {useState}from "react";
-import {Cards}from"./cards.js";
+import {Cards}from"./card.js";
 
 export default function App()
 {
@@ -21,7 +21,7 @@ export default function App()
                 idCarta.push(carteIniziali[i].id);
             setCarteUtilizzate(idCarta);
         }
-        setCarteAttuali(carteIniziali);
+        setCarte(carteIniziali);
     };
     return(
         <View style={styles.container}>
@@ -52,20 +52,22 @@ function HomeGioco({setSchermata,Partita})
             <Text style={styles.homeGiocoDescrizione}>
                 2. In ogni round ti viene mostrata una nuova carta dove vedi solo il nome e l'immagine, invece l'indice di sfortuna è nascosto</Text>
             <Text style={styles.homeGiocoDescrizione}>
-                3. Devi scegliere dove collocare la carta in 30 secondi in ordine crescente di sfortuna</Text>
+                3. Devi scegliere dove collocare la carta in ordine crescente di sfortuna</Text>
             <Text style={styles.homeGiocoDescrizione}>
                 4. Se indovini ottieni la carta e viene aggiunta al mazzo</Text>
             <Text style={styles.homeGiocoDescrizione}>
                 5. In caso contrario, la carta viene scartata e avrai un errore</Text>
             <Text style={styles.homeGiocoDescrizione}>
                 6. Vinci se riesci ad avere 6 carte nel mazzo, invece perdi se commetti 3 errori</Text>
-            <Button onPress={()=>{Partita();setSchermata("Gioco");}} title="Inizia Partita"/>
+            <Button onPress={()=>{Partita();setSchermata("Gioco");}} color="red" title="Inizia Partita"/>
         </View>
     )}
 function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
 {
     const[posizione,setPosizione]=useState("");
-    const[cartaAttuale,setCartaAttuale]=useState(null);
+    const[cartaAttuale,setCartaAttuale]=useState(
+        Cards[Math.floor(Math.random()*Cards.length)]
+    );
     const verificaPosizione=()=>{
         const indice=parseInt(posizione);
         const cartaInserita=[];
@@ -79,48 +81,43 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
             alert("Posizione corretta, la carta è stata aggiunta al mazzo");
             if(carte.length+1>=6)
                 setSchermata("RisultatiGioco");
+                setErrori(0);
         }
         else
         {
             setErrori(errori+1);
             alert("Posizione sbagliata, errore");
             if(errori+1>=3)
-                 setSchermata("RisultatiGioco");
+                setSchermata("RisultatiGioco");
+                setErrori(0);
         }
     };
-    const nuovaCarta=()=>{
-    const disponibili=[];
-    for(let i=0;i<Cards.length;i++)
-        if(!carteUlitizzate.includes(Cards[i].id))
-            disponibili.push(Cards[i]);
-    }
-    const random=disponibili[Math.floor(Math.random()*disponibili.length)];
     const listaCarte=[];
-    for(let i=0;i<carte.length;i++){
-    listaCarte.push(
+    for(let i=0;i<carte.length;i++)
+    {
+      listaCarte.push(
         <Text>
-            {i} {carte[i].emoji}{carte[i].name}-{carte[i].indiceSfortuna}
+            {i} {carte[i].emoji} {carte[i].name} - {carte[i].indiceSfortuna}
         </Text>
     );
     }
-    setCartaAttuale(random);
-    nuovaCarta();
-    setPosizione("");
     return(
         <View style={styles.containerBody}>
             <Text style={styles.bodyTextCarte}>
                 Carte del mazzo:{carte.length}
             </Text>
-            <TextInput onChangeText={(valore)=>{setPosizione(valore)}}
-            value={posizione}style={{borderWidth:1,width:50}}/>
-            <Button onPress={()=>{verificaPosizione()}}
-            title="Aggiungi carta"style={styles.bodyButton}/>
+            <Button onPress={()=>{setPosizione("0");verificaPosizione();}} title="Posizione 0"/>
+            <Button onPress={()=>{setPosizione("1");verificaPosizione();}} title="Posizione 1"/>
+            <Button onPress={()=>{setPosizione("2");verificaPosizione();}} title="Posizione 2"/>
             <Text style={styles.bodyTextErrori}>
                 Errori:{errori}
             </Text>
             <Text>
-                Le tue carte:{listaCarte}
+                Le tue carte:
             </Text>
+            <View>
+                {listaCarte}
+            </View>
             <View>
                 <Text style={styles.bodyCartaEmoji}>
                     {cartaAttuale.emoji}
@@ -136,13 +133,13 @@ function RisultatiGioco({setSchermata,carte,errori})
 {
     return(
         <View style={styles.containerRisultatiGioco}>
-            <Text style={styles.RisultatiTextCarte}>
+            <Text style={styles.risultatiTextCarte}>
                 Carte raccolte:{carte.length}
             </Text>
-            <Text style={styles.RisultatiTextErrori}>
+            <Text style={styles.risultatiTextErrori}>
                 Errori:{errori}
             </Text>
-            <Button style={styles.RisultatiButton} 
+            <Button style={styles.risultatiButton} 
             onPress={()=>setSchermata("Home del gioco")} title="Gioca ancora"/>
         </View>
     )
@@ -151,12 +148,11 @@ const styles={
     container:{flex:1,height:200,justifyContent:"center",alignItems:"center"},
 
     containerHeader:{flex:1,justifyContent:"center",alignItems:"center"},
-        headerText:{fontSize:24,fontWeight:"bold",color:"blue"},
+        headerText:{fontSize:30,fontWeight:"bold",color:"blue",textShadowColor:"red",textShadowOffset:{width:1,height:2}},
 
     containerHomeGioco:{flex:3,justifyContent:"center",alignItems:"center"},
         homeGiocoText:{fontSize:20,fontWeight:"bold",color:"red"},
         homeGiocoDescrizione:{fontSize:16,textAlign:"center",margin:10,color:"black"},
-        homeGiocoButton:{margin:10},
 
     containerBody:{flex:2,justifyContent:"center",alignItems:"center"},
         bodyTextCarte:{fontSize:18,color:"green"},
@@ -164,10 +160,8 @@ const styles={
         bodyCartaEmoji:{fontSize:50,alignItems:"center"},
         bodyCartaNome:{fontSize:20,fontWeight:"bold",alignItems:"center",color:"black"},
         bodyTextInput:{borderWidth:1,width:50,margin:10},
-        bodyButton:{margin:10},
 
     containerRisultatiGioco:{flex:3,justifyContent:"center",alignItems:"center"},
-        RisultatiTextCarte:{fontSize:20,fontWeight:"bold",color:"purple"},
-        RisultatiTextErrori:{fontSize:20,fontWeight:"bold",color:"orange"},
-        RisultatiButton:{margin:10},
+        risultatiTextCarte:{fontSize:20,fontWeight:"bold",color:"purple"},
+        risultatiTextErrori:{fontSize:20,fontWeight:"bold",color:"orange"},
 }
