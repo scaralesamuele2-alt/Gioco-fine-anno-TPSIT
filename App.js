@@ -90,33 +90,45 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
     };
     const[posizione,setPosizione]=useState("");
     const[cartaAttuale,setCartaAttuale]=useState(()=>generaCarta(carte));
-    const verificaPosizione=(posizioneScelta)=>
+    const verificaPosizione=(posizioneScelta)=>{
+    const indice=posizioneScelta-1;
+    if(indice<0||indice>carte.length)
     {
-        const indice=posizioneScelta-1;
-        if(indice<0||indice>carte.length)
-        {
-            setErrori(errori+1);
-            alert("Posizione sbagliata");
-            return;
-        } 
-        const nuovoMazzo=[...carte];
-        for(let i=0;i<carte.length;i++)
-        {
-            if(carte[i].id===cartaAttuale.id)
-            {
-                alert("Carta già presente");
-                return;
-            }
-        }
-        nuovoMazzo.splice(indice,0,cartaAttuale);
-        const ordinato=nuovoMazzo.sort(
-            (a,b)=>a.indiceSfortuna-b.indiceSfortuna
-        );
-        alert("Posizione corretta, carta aggiunta al mazzo");
-        if(ordinato.length>=6)
+    const nuoviErrori=errori+1;
+        setErrori(nuoviErrori);
+        if(nuoviErrori>=3)
             setSchermata("RisultatiGioco");
-        setCarte(ordinato);
-        setCartaAttuale(generaCarta(ordinato));
+        alert("Posizione sbagliata");
+        return;
+    }
+    const nuovoMazzo=[...carte];
+    nuovoMazzo.splice(indice,0,cartaAttuale);
+    let corretto=true;
+    for(let i=0;i<nuovoMazzo.length-1;i++)
+    {
+        if(nuovoMazzo[i].indiceSfortuna>nuovoMazzo[i+1].indiceSfortuna)
+        {
+            corretto=false;
+            break;
+        }
+    }
+
+        if(corretto)
+        {
+            alert("Posizione corretta, carta aggiunta al mazzo");
+            setCarte(nuovoMazzo);
+            if(nuovoMazzo.length>=6)
+                setSchermata("RisultatiGioco");
+            setCartaAttuale(generaCarta(nuovoMazzo));
+        }
+        else
+        {
+            alert("Posizione sbagliata!");
+            const nuoviErrori=errori+1;
+            setErrori(nuoviErrori);
+            if(nuoviErrori>=3)
+                setSchermata("RisultatiGioco");
+        }
     };
     return(
         <View style={styles.containerBody}>
@@ -126,7 +138,7 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
             <Text style={styles.bodyTextCarte}>
                 Carte del mazzo:{carte.length}
             </Text>
-            <Text>
+            <Text style={styles.bodyTextLeTueCarte}>
                 Le tue carte:
             </Text>
             <View>
@@ -136,7 +148,7 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
                 for(let i=0;i<carte.length;i++)
                 {
                     elementi.push(
-                    <Text>
+                    <Text style={styles.bodyTextCarteIniziali}>
                         {i}{carte[i].emoji}{carte[i].name}-{carte[i].indiceSfortuna}
                     </Text>
                     );
@@ -151,9 +163,10 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
                 const numeroBottoni=carte.length+1;
                 for(let i=1;i<=numeroBottoni;i++)
                 {
-                    const posizioneString=String(i);
+                    const posizione=i;
                     bottoni.push(
-                    <Button onPress={()=>{setPosizione(posizioneString);verificaPosizione();}}title={"Prima della posizione "+i}/>
+                    <Button style={styles.risultatiGiocoButton}
+                    onPress={()=>{setPosizione(posizione);verificaPosizione(i);}} title={"Prima della posizione "+i}/>
                     );
                 }
             return bottoni;
@@ -181,7 +194,7 @@ function RisultatiGioco({setSchermata,carte,errori,resetGioco})
             <Text style={styles.risultatiTextErrori}>
                 Errori:{errori}
             </Text>
-            <Button style={styles.risultatiButton} 
+            <Button style={styles.risultatiGiocoButton}
             onPress={()=>{setSchermata("Home del gioco");resetGioco();}} title="Gioca ancora"/>
         </View>
     )
@@ -197,13 +210,16 @@ const styles={
         homeGiocoDescrizione:{fontSize:16,textAlign:"center",margin:10,color:"black"},
 
     containerBody:{flex:2,justifyContent:"center",alignItems:"center"},
-        bodyTextCarte:{fontSize:18,color:"green",alignItems:"center"},
-        bodyTextErrori:{fontSize:18,color:"red",alignItems:"center",topAndBottom:10,fontWeight:"bold"},
-        bodyCartaEmoji:{fontSize:50,alignItems:"center"},
-        bodyCartaNome:{fontSize:20,fontWeight:"bold",alignItems:"center",color:"black"},
+        bodyTextCarteIniziali:{fontSize:20,textAlign:"center"},
+        bodyTextLeTueCarte:{fontSize:20,color:"darkgreen"},
+        bodyTextCarte:{fontSize:20,color:"purple",alignItems:"center"},
+        bodyTextErrori:{fontSize:22,color:"red",alignItems:"left",fontWeight:"bold"},
+        bodyCartaEmoji:{fontSize:50,justifyContent:"center",alignItems:"center"},
+        bodyCartaNome:{fontSize:20,fontWeight:"bold",justifyContent:"center",alignItems:"center",color:"black"},
         bodyTextInput:{borderWidth:1,width:50,margin:10},
 
     containerRisultatiGioco:{flex:3,justifyContent:"center",alignItems:"center"},
         risultatiTextCarte:{fontSize:20,fontWeight:"bold",color:"purple"},
-        risultatiTextErrori:{fontSize:20,fontWeight:"bold",color:"orange"},
+        risultatiTextErrori:{fontSize:20,fontWeight:"bold",color:"red"},
+        risultatiGiocoButton:{margin:50,borderRadius:100},
 }
