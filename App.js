@@ -11,19 +11,21 @@ export default function App()
     const[carteUlitizzate,setCarteUtilizzate]=useState([]);
     const Partita=()=>{
         const carteIniziali=[];
-        while(carteIniziali.length<3)
+        const idCarta=[];
+        while (carteIniziali.length<3)
         {
             const cartaRandom=Cards[Math.floor(Math.random()*Cards.length)];
-            carteIniziali.push(cartaRandom);
-            const idCarta=[];
-            for(let i=0;i<carteIniziali.length;i++)
-                idCarta.push(carteIniziali[i].id);
-            setCarteUtilizzate(idCarta);
+            if(!idCarta.includes(cartaRandom.id))
+            {
+                carteIniziali.push(cartaRandom);
+                idCarta.push(cartaRandom.id);
+            }
         }
+        setCarteUtilizzate(idCarta);
         const carteOrdinata=[...carteIniziali].sort(
             (a,b)=>a.indiceSfortuna-b.indiceSfortuna
         );
-setCarte(carteOrdinata);
+        setCarte(carteOrdinata);
     };
     const resetGioco=()=>{
         setCarte([]);
@@ -70,46 +72,52 @@ function HomeGioco({setSchermata,Partita})
     )}
 function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
 {
-    const[posizione,setPosizione]=useState("");
-    const[cartaAttuale,setCartaAttuale]=useState(
-        Cards[Math.floor(Math.random()*Cards.length)]
-    );
-    const verificaPosizione=()=>{
-        const indice=parseInt(posizione);
-        const cartaInserita=[];
-        for(let i=0;i<carte.length;i++)
-            cartaInserita.push(carte[i]);
-        const precedente=cartaInserita[indice-1];
-        const successiva=cartaInserita[indice];
-        if(cartaAttuale.indiceSfortuna>precedente.indiceSfortuna && cartaAttuale.indiceSfortuna<successiva.indiceSfortuna)
+    const generaCarta=(carte)=>{
+        let cartaAttuale=Cards[Math.floor(Math.random()*Cards.length)];
+        let trovata=true;
+        while(trovata)
         {
-            setCarte([...carte,cartaAttuale]);
-            alert("Posizione corretta, la carta è stata aggiunta al mazzo");
-            if(carte.length+1>=6)
-                const MazzoAggiornato=[...carte,cartaAttuale];
-                const ordinato=MazzoAggiornato.sort(
-                    (a,b)=>a.indiceSfortuna-b.indiceSfortuna
-                );
-
-setCarte(ordinato);
+            trovata=false;
+            for(let i=0;i<carte.length;i++)
+            {
+                if(carte[i].id===cartaAttuale.id)
+                    trovata=true;
+            }
+            if(trovata)
+            cartaAttuale=Cards[Math.floor(Math.random()*Cards.length)];
         }
-        else
+        return cartaAttuale;
+    };
+    const[posizione,setPosizione]=useState("");
+    const[cartaAttuale,setCartaAttuale]=useState(()=>generaCarta(carte));
+    const verificaPosizione=(posizioneScelta)=>
+    {
+        const indice=posizioneScelta-1;
+        if(indice<0||indice>carte.length)
         {
             setErrori(errori+1);
-            alert("Posizione sbagliata, errore");
-            if(errori+1>=3)
-                setSchermata("RisultatiGioco");
+            alert("Posizione sbagliata");
+            return;
+        } 
+        const nuovoMazzo=[...carte];
+        for(let i=0;i<carte.length;i++)
+        {
+            if(carte[i].id===cartaAttuale.id)
+            {
+                alert("Carta già presente");
+                return;
+            }
         }
+        nuovoMazzo.splice(indice,0,cartaAttuale);
+        const ordinato=nuovoMazzo.sort(
+            (a,b)=>a.indiceSfortuna-b.indiceSfortuna
+        );
+        alert("Posizione corretta, carta aggiunta al mazzo");
+        if(ordinato.length>=6)
+            setSchermata("RisultatiGioco");
+        setCarte(ordinato);
+        setCartaAttuale(generaCarta(ordinato));
     };
-    const listaCarte=[];
-    for(let i=0;i<carte.length;i++)
-    {
-      listaCarte.push(
-        <Text>
-            {i} {carte[i].emoji}{carte[i].name} - {carte[i].indiceSfortuna}
-        </Text>
-    );
-    }
     return(
         <View style={styles.containerBody}>
             <Text style={styles.bodyTextErrori}>
@@ -122,18 +130,35 @@ setCarte(ordinato);
                 Le tue carte:
             </Text>
             <View>
-                {listaCarte}
-            </View>
-            <View>{(()=>{
-                const bottoni=[];
-                for(let i=1;i<=carte.length+1;i++)
+            {
+                (()=>{
+                const elementi=[];
+                for(let i=0;i<carte.length;i++)
                 {
-                    bottoni.push(
-                        <Button onPress={()=>{setPosizione(String(i));verificaPosizione();}} title={"Posizione "+i}/>
+                    elementi.push(
+                    <Text>
+                        {i}{carte[i].emoji}{carte[i].name}-{carte[i].indiceSfortuna}
+                    </Text>
                     );
                 }
-                return bottoni;
-            })()}
+                return elementi;
+                })()
+            }
+            </View>
+            <View>
+            {(()=>{
+                const bottoni=[];
+                const numeroBottoni=carte.length+1;
+                for(let i=1;i<=numeroBottoni;i++)
+                {
+                    const posizioneString=String(i);
+                    bottoni.push(
+                    <Button onPress={()=>{setPosizione(posizioneString);verificaPosizione();}}title={"Prima della posizione "+i}/>
+                    );
+                }
+            return bottoni;
+            })()
+            }
             </View>
             <View>
                 <Text style={styles.bodyCartaEmoji}>
