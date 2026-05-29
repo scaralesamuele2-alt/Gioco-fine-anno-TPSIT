@@ -8,7 +8,6 @@ export default function App()
     const[schermata,setSchermata]=useState("Home del gioco");
     const[carte,setCarte]=useState([]);
     const[errori,setErrori]=useState(0);
-    const[carteAttuali,setCarteAttuali]=useState([]);
     const[carteUlitizzate,setCarteUtilizzate]=useState([]);
     const Partita=()=>{
         const carteIniziali=[];
@@ -21,7 +20,14 @@ export default function App()
                 idCarta.push(carteIniziali[i].id);
             setCarteUtilizzate(idCarta);
         }
-        setCarte(carteIniziali);
+        const carteOrdinata=[...carteIniziali].sort(
+            (a,b)=>a.indiceSfortuna-b.indiceSfortuna
+        );
+setCarte(carteOrdinata);
+    };
+    const resetGioco=()=>{
+        setCarte([]);
+        setErrori(0);
     };
     return(
         <View style={styles.container}>
@@ -29,7 +35,7 @@ export default function App()
             {schermata==="Home del gioco" && <HomeGioco setSchermata={setSchermata} Partita={Partita}/>}
             <ScrollView>
                 {schermata==="Gioco"&&<Body setSchermata={setSchermata} carte={carte} setCarte={setCarte} errori={errori} setErrori={setErrori} carteUlitizzate={carteUlitizzate}/>}
-               {schermata==="RisultatiGioco"&&<RisultatiGioco setSchermata={setSchermata} carte={carte} errori={errori}/>}
+               {schermata==="RisultatiGioco"&&<RisultatiGioco setSchermata={setSchermata} carte={carte} errori={errori} resetGioco={resetGioco}/>}
             </ScrollView>
         </View>
     )
@@ -80,8 +86,12 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
             setCarte([...carte,cartaAttuale]);
             alert("Posizione corretta, la carta è stata aggiunta al mazzo");
             if(carte.length+1>=6)
-                setSchermata("RisultatiGioco");
-                setErrori(0);
+                const MazzoAggiornato=[...carte,cartaAttuale];
+                const ordinato=MazzoAggiornato.sort(
+                    (a,b)=>a.indiceSfortuna-b.indiceSfortuna
+                );
+
+setCarte(ordinato);
         }
         else
         {
@@ -89,7 +99,6 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
             alert("Posizione sbagliata, errore");
             if(errori+1>=3)
                 setSchermata("RisultatiGioco");
-                setErrori(0);
         }
     };
     const listaCarte=[];
@@ -97,26 +106,34 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
     {
       listaCarte.push(
         <Text>
-            {i} {carte[i].emoji} {carte[i].name} - {carte[i].indiceSfortuna}
+            {i} {carte[i].emoji}{carte[i].name} - {carte[i].indiceSfortuna}
         </Text>
     );
     }
     return(
         <View style={styles.containerBody}>
-            <Text style={styles.bodyTextCarte}>
-                Carte del mazzo:{carte.length}
-            </Text>
-            <Button onPress={()=>{setPosizione("0");verificaPosizione();}} title="Posizione 0"/>
-            <Button onPress={()=>{setPosizione("1");verificaPosizione();}} title="Posizione 1"/>
-            <Button onPress={()=>{setPosizione("2");verificaPosizione();}} title="Posizione 2"/>
             <Text style={styles.bodyTextErrori}>
                 Errori:{errori}
+            </Text>
+            <Text style={styles.bodyTextCarte}>
+                Carte del mazzo:{carte.length}
             </Text>
             <Text>
                 Le tue carte:
             </Text>
             <View>
                 {listaCarte}
+            </View>
+            <View>{(()=>{
+                const bottoni=[];
+                for(let i=1;i<=carte.length+1;i++)
+                {
+                    bottoni.push(
+                        <Button onPress={()=>{setPosizione(String(i));verificaPosizione();}} title={"Posizione "+i}/>
+                    );
+                }
+                return bottoni;
+            })()}
             </View>
             <View>
                 <Text style={styles.bodyCartaEmoji}>
@@ -129,7 +146,7 @@ function Body({setSchermata,carte,setCarte,errori,setErrori,carteUlitizzate})
         </View>
     )
 }
-function RisultatiGioco({setSchermata,carte,errori})
+function RisultatiGioco({setSchermata,carte,errori,resetGioco})
 {
     return(
         <View style={styles.containerRisultatiGioco}>
@@ -140,7 +157,7 @@ function RisultatiGioco({setSchermata,carte,errori})
                 Errori:{errori}
             </Text>
             <Button style={styles.risultatiButton} 
-            onPress={()=>setSchermata("Home del gioco")} title="Gioca ancora"/>
+            onPress={()=>{setSchermata("Home del gioco");resetGioco();}} title="Gioca ancora"/>
         </View>
     )
 }
@@ -155,8 +172,8 @@ const styles={
         homeGiocoDescrizione:{fontSize:16,textAlign:"center",margin:10,color:"black"},
 
     containerBody:{flex:2,justifyContent:"center",alignItems:"center"},
-        bodyTextCarte:{fontSize:18,color:"green"},
-        bodyTextErrori:{fontSize:18,color:"red"},
+        bodyTextCarte:{fontSize:18,color:"green",alignItems:"center"},
+        bodyTextErrori:{fontSize:18,color:"red",alignItems:"center",topAndBottom:10,fontWeight:"bold"},
         bodyCartaEmoji:{fontSize:50,alignItems:"center"},
         bodyCartaNome:{fontSize:20,fontWeight:"bold",alignItems:"center",color:"black"},
         bodyTextInput:{borderWidth:1,width:50,margin:10},
